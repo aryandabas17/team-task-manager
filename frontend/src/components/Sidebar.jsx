@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, FolderKanban, CheckSquare, Settings } from 'lucide-react';
+import { LayoutDashboard, Briefcase, CheckSquare, Settings } from 'lucide-react';
 
 const navItems = [
   { name: 'Dashboard', to: '/dashboard', icon: LayoutDashboard },
-  { name: 'Projects', to: '/projects', icon: FolderKanban },
+  { name: 'Projects', to: '/projects', icon: Briefcase },
 ];
 
 const Sidebar = () => {

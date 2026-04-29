@@ -6,26 +6,12 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
-enum Role {
-  ADMIN
-  MEMBER
-}
-
-enum TaskStatus {
-  TODO
-  IN_PROGRESS
-  DONE
-}
-
-enum Priority {
-  LOW
-  MEDIUM
-  HIGH
-}
+// SQLite doesn't support enums, so we'll use Strings in the models 
+// and handle validation in the application logic.
 
 model User {
   id        String   @id @default(cuid())
@@ -59,7 +45,7 @@ model Project {
 
 model ProjectMember {
   id        String   @id @default(cuid())
-  role      Role     @default(MEMBER)
+  role      String     @default("MEMBER")
   joinedAt  DateTime @default(now())
 
   userId    String
@@ -75,8 +61,8 @@ model Task {
   id          String     @id @default(cuid())
   title       String
   description String?
-  status      TaskStatus @default(TODO)
-  priority    Priority   @default(MEDIUM)
+  status      String     @default("TODO")
+  priority    String     @default("MEDIUM")
   dueDate     DateTime?
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt

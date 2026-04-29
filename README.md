@@ -3,18 +3,54 @@
 A full-stack collaborative Team Task Management Web Application. Users can create projects, invite team members, manage task boards (Kanban style), and view analytics through an interactive dashboard. 
 
 ## Features
-- **Secure Authentication**: JWT-based authentication with bcrypt password hashing.
-- **Projects Management**: Create projects, auto-assign Admin role to the creator, and invite members via email.
-- **Task Management**: Kanban-style Task Board (To Do, In Progress, Done). Filtered by project.
-- **Role-Based Access Control**: Admins can invite/remove members and manage tasks. Members can update their assigned tasks status.
-- **Analytics Dashboard**: Statistics and visualizations (built with Recharts) showcasing total tasks, tasks by status, overdue tasks, and more.
-- **Fully Responsive UI**: Modern frontend built with React, Vite, Tailwind CSS, and Lucide Icons.
+
+### Authentication Module
+- User Signup & Login
+- JWT Token Storage & Automatic Interceptors
+- Logout Functionality
+- Protected Routes (Auth Guard)
+
+### Dashboard Module
+- Total Tasks Count
+- Completed / In Progress / Overdue Statistics
+- Recent Tasks Section
+- Tasks By Status Analytics (Interactive Charts)
+
+### Project Management Module
+- Create & View All Projects
+- Open Detailed Project View
+- Add/Remove Members (via Email)
+- View All Team Members
+
+### Task Management Module & Kanban
+- Create / Edit / Delete Tasks
+- Assign Tasks to Specific Users
+- Set Task Priority (Low, Medium, High)
+- Set Due Dates
+- Kanban Board: To Do, In Progress, Done
+- Move Tasks Between Statuses (Drag/Click to switch)
+- Priority Labels & Assignments
+
+### Role-Based Access Module
+- **Admin**: Full Project Access, Manage Members, Create/Delete Tasks, Assign Work.
+- **Member**: View Project Information, Update Assigned Task Status.
+
+### UI & UX Components
+- Navbar & Sidebar Navigation
+- Dynamic Dashboard & Project Cards
+- Task Cards with Status Overlays
+- Modal Forms & Loading Spinners
+- Mobile Responsive Layout (Tailwind CSS)
+
+## Final Frontend Flow
+1. **Login / Signup** → 2. **Dashboard** → 3. **Projects** → 4. **Open Project** → 5. **Create / Assign Tasks** → 6. **Update Task Status** → 7. **Track Progress**
 
 ## Tech Stack
-- **Frontend**: React.js, Vite, Tailwind CSS, React Router DOM, Axios, Recharts
+- **Frontend**: React.js, Vite, Tailwind CSS v4, React Router DOM, Axios, Recharts
 - **Backend**: Node.js, Express.js, Prisma ORM
-- **Database**: PostgreSQL (Railway/Neon)
+- **Database**: PostgreSQL / SQLite (for local dev)
 - **Deployment**: Railway (Backend), Vercel (Frontend)
+
 
 ## Installation Steps (Local Development)
 

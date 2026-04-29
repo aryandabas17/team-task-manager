@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import api from '../api/axios';
 import { AuthContext } from '../context/AuthContext';
-import { ArrowLeft, UserPlus, Trello, X, User } from 'lucide-react';
+import { ArrowLeft, UserPlus, Columns, X, User, Users } from 'lucide-react';
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -85,7 +85,7 @@ const ProjectDetails = () => {
             to={`/projects/${project.id}/board`}
             className="flex items-center gap-2 bg-indigo-600 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-indigo-700 transition-colors shadow-sm shadow-indigo-200"
           >
-            <Trello className="w-5 h-5" />
+            <Columns className="w-5 h-5" />
             Task Board
           </Link>
         </div>
